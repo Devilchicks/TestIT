@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login</title>
+    
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <form>
+        <div class="row">
+            <div>
+                <label for="comment">Email</label>
+                <input type="email" placeholder="example@gmail.com" id="userEmail">
+            </div>
+            <div>
+                <label for="comment">Password</label>
+                <input type="password" id="userPass">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" id="btnLogin">Login</button>
+            </div>
+        </div>
+    </form>
+    
+    <script src="asset/js/bootstrap.min.js"></script>
+    <script src="asset/js/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            var email = "admin@gmail.com";
+            var pass = "Welcome0@"
+            let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})');
+
+            function passCheck(){
+                if(strongPassword.test($("#userPass").val())==false){
+                    alert("Format Password Salah!");
+                    return false;
+                }
+            }
+
+            $("#btnLogin").click(function(){
+               Login();
+            });
+
+            function Login(){
+                passCheck();
+                if(email=="admin@gmail.com" && pass=="Welcome0@"){
+
+                }
+                else{
+                    alert("Password atau email yang dimasukkan salah!");
+                    return false;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
